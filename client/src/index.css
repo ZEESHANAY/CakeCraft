@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-cream: #FFF5E4;
+    --primary-pink: #FADADD;
+    --primary-beige: #F8EDEB;
+    --primary-lbrown: #C89F9C;
+    --primary-cbrown: #5C3A21;
+  }
+
+  body {
+    @apply bg-cream text-dark-brown font-poppins antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-light-brown text-white px-8 py-3 rounded-full shadow-md hover:bg-chocolate-brown transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-soft-pink text-dark-brown px-8 py-3 rounded-full shadow-sm hover:bg-strawberry-pink transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .card-premium {
+    @apply bg-white/80 backdrop-blur-sm rounded-cake p-6 shadow-lg border border-white/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .input-checkout {
+    @apply w-full bg-white border border-soft-pink px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-soft-pink text-sm transition-all;
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-light-brown rounded-full hover:bg-chocolate-brown transition-colors;
+}
