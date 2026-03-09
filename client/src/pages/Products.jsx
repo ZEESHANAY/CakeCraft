@@ -4,12 +4,32 @@ import { Search, Filter, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const MOCK_PRODUCTS = [
+  // Cakes
   { id: 1, name: "Chocolate Dream", price: 45, category: "Cakes", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80", desc: "Rich chocolate layers with ganache" },
   { id: 2, name: "Red Velvet Bliss", price: 40, category: "Cakes", image: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=400&q=80", desc: "Classic red velvet with cream cheese icing" },
   { id: 3, name: "Vanilla Bean", price: 35, category: "Cakes", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=400&q=80", desc: "Pure Madagascar vanilla bean goodness" },
   { id: 4, name: "Strawberry Swirl", price: 38, category: "Cakes", image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80", desc: "Fresh strawberries and light sponge" },
-  { id: 5, name: "Rainbow Cupcakes", price: 24, category: "Cupcakes", image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80", desc: "Set of 6 colorful artisanal cupcakes" },
-  { id: 6, name: "Classic Cheesecake", price: 42, category: "Cheesecake", image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=400&q=80", desc: "Creamy New York style cheesecake" },
+  { id: 5, name: "Lemon Chiffon Delight", price: 36, category: "Cakes", image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=400&q=80", desc: "Zesty lemon cake with airy meringue" },
+  { id: 6, name: "Espresso Fudge Cake", price: 48, category: "Cakes", image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=400&q=80", desc: "Dark chocolate infused with deep espresso roast" },
+  { id: 7, name: "Matcha Crepe Cake", price: 55, category: "Cakes", image: "https://images.unsplash.com/photo-1627807767471-ee65aaee21ba?auto=format&fit=crop&w=400&q=80", desc: "20 delicate crepes layered with matcha cream" },
+
+  // Cupcakes
+  { id: 8, name: "Rainbow Cupcakes", price: 24, category: "Cupcakes", image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80", desc: "Set of 6 colorful artisanal cupcakes" },
+  { id: 9, name: "Double Chocolate Cupcakes", price: 22, category: "Cupcakes", image: "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=400&q=80", desc: "Fudge frosting on a moist cocoa base" },
+  { id: 10, name: "Salted Caramel Cupcakes", price: 26, category: "Cupcakes", image: "https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=400&q=80", desc: "Drizzled with house-made salted caramel" },
+  { id: 11, name: "Blueberry Lemon Cupcakes", price: 25, category: "Cupcakes", image: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=400&q=80", desc: "Fresh blueberries folded into lemon batter" },
+  { id: 12, name: "Pistachio Rose Cupcakes", price: 28, category: "Cupcakes", image: "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=400&q=80", desc: "Delicate rose buttercream sprinkled with nuts" },
+  { id: 13, name: "Peanut Butter Cup Cupcakes", price: 27, category: "Cupcakes", image: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=400&q=80", desc: "A chocolate and peanut butter lover's dream" },
+  { id: 14, name: "Raspberry Vanilla Cupcakes", price: 24, category: "Cupcakes", image: "https://images.unsplash.com/photo-1584282555073-58ce3e7e8eb5?auto=format&fit=crop&w=400&q=80", desc: "Stuffed with tart raspberry preserves" },
+
+  // Cheesecakes
+  { id: 15, name: "Classic Cheesecake", price: 42, category: "Cheesecake", image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=400&q=80", desc: "Creamy New York style cheesecake" },
+  { id: 16, name: "Blueberry Compote Cheesecake", price: 45, category: "Cheesecake", image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80", desc: "Topped with a sweet wild blueberry reduction" },
+  { id: 17, name: "Turtle Pecan Cheesecake", price: 48, category: "Cheesecake", image: "https://images.unsplash.com/photo-1525124568695-c4c6cd3a8842?auto=format&fit=crop&w=400&q=80", desc: "Caramel, chocolate chips, and toasted pecans" },
+  { id: 18, name: "Matcha Swirl Cheesecake", price: 50, category: "Cheesecake", image: "https://images.unsplash.com/photo-1552158580-f04bf02cc8e2?auto=format&fit=crop&w=400&q=80", desc: "Earthy Japanese green tea marbled throughout" },
+  { id: 19, name: "White Choc Raspberry Cheesecake", price: 46, category: "Cheesecake", image: "https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=400&q=80", desc: "Smooth white chocolate with raspberry swirls" },
+  { id: 20, name: "Cookie Butter Cheesecake", price: 44, category: "Cheesecake", image: "https://images.unsplash.com/photo-1633511090164-b4bf7ee24147?auto=format&fit=crop&w=400&q=80", desc: "Biscoff cookie crust and creamy spiced filling" },
+  { id: 21, name: "Dark Choc Truffle Cheesecake", price: 49, category: "Cheesecake", image: "https://images.unsplash.com/photo-1627626922650-61883dd117bd?auto=format&fit=crop&w=400&q=80", desc: "Intensely rich cocoa and velvety cream cheese" },
 ];
 
 const Products = () => {
