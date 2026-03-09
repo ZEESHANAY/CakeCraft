@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --primary-cream: #FFF5E4;
-    --primary-pink: #FADADD;
-    --primary-beige: #F8EDEB;
-    --primary-lbrown: #C89F9C;
-    --primary-cbrown: #5C3A21;
-  }
-
   body {
-    @apply bg-cream text-dark-brown font-poppins antialiased overflow-x-hidden;
+    background-color: #fff5e4;
+    color: #3a2e2a;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
   }
 }
 
@@ -39,16 +39,15 @@
     @apply w-full bg-white border border-soft-pink px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-soft-pink text-sm transition-all;
   }
 }
-
-/* Custom premium scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
 ::-webkit-scrollbar-track {
-  @apply bg-cream;
+  background: #fff5e4;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-light-brown rounded-full hover:bg-chocolate-brown transition-colors;
+  background: #c89f9c;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5c3a21;
 }
