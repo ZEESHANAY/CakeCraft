@@ -1,8 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-cream: #FFF5E4;
+  --color-soft-pink: #FADADD;
+  --color-vanilla-beige: #F8EDEB;
+  --color-light-brown: #C89F9C;
+  --color-chocolate-brown: #5C3A21;
+  --color-strawberry-pink: #FF8FAB;
+  --color-soft-peach: #FFD6D6;
+  --color-dark-brown: #3A2E2A;
+  --color-soft-gray: #6B6B6B;
+  --font-playfair: 'Playfair Display', serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --radius-cake: 1.5rem;
+}
 
 @layer base {
   body {
