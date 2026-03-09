@@ -4,6 +4,9 @@ import Products from './pages/Products';
 import CustomBuilder from './pages/CustomBuilder';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import ContactUs from './pages/ContactUs';
+import DeliveryInfo from './pages/DeliveryInfo';
+import FAQs from './pages/FAQs';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Assistant from './components/Assistant';
@@ -24,6 +27,9 @@ function App() {
               <Route path="/builder" element={<CustomBuilder />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/delivery" element={<DeliveryInfo />} />
+              <Route path="/faqs" element={<FAQs />} />
             </Routes>
           </AnimatePresence>
         </main>

@@ -11,7 +11,7 @@ const Home = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center bg-vanilla-beige overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center bg-vanilla-beige overflow-hidden py-20 md:py-0">
         <div className="absolute inset-0 bg-gradient-to-r from-cream via-transparent to-transparent z-10" />
         <div className="container mx-auto px-6 relative z-20 flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 text-left space-y-8">
@@ -64,7 +64,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-playfair font-bold text-chocolate-brown">Why Choose CakeCraft?</h2>
@@ -96,7 +96,7 @@ const Home = () => {
       </section>
 
       {/* Featured Cakes Section */}
-      <section className="py-24 bg-cream/30">
+      <section className="py-16 lg:py-20 bg-cream/30">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
@@ -137,7 +137,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-playfair font-bold text-chocolate-brown">Sweet Words</h2>
@@ -166,7 +166,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-chocolate-brown text-white text-center relative overflow-hidden">
+      <section className="py-16 lg:py-20 bg-chocolate-brown text-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
            <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl" />
            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-soft-pink rounded-full blur-3xl" />

@@ -30,23 +30,25 @@ const Cart = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
-                    className="bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-white flex gap-4 items-center"
+                    className="bg-white p-6 rounded-2xl shadow-md border border-soft-pink/30 flex gap-6 items-center transition-all hover:shadow-lg"
                   >
-                    <img src={item.image} alt={item.name} className="w-20 h-20 rounded-xl object-cover" />
+                    <img src={item.image} alt={item.name} className="w-24 h-24 rounded-xl object-cover shadow-sm" />
                     <div className="flex-grow">
-                      <h3 className="font-bold text-chocolate-brown">{item.name}</h3>
+                      <h3 className="text-xl font-bold text-chocolate-brown mb-1">{item.name}</h3>
                       {item.config && (
-                         <p className="text-xs text-soft-gray italic">
+                         <p className="text-sm text-soft-gray italic mb-2">
                             Custom: {item.config.size}, {item.config.flavor}, {item.config.layers} Layer(s)
                          </p>
                       )}
-                      <p className="text-sm font-bold text-strawberry-pink">${item.price}</p>
+                      <p className="text-lg font-bold text-strawberry-pink">${item.price}</p>
                     </div>
-                    <div className="flex items-center gap-4">
-                       <span className="text-sm font-medium">Qty: {item.quantity}</span>
+                    <div className="flex items-center gap-6">
+                       <div className="bg-vanilla-beige px-4 py-2 rounded-full border border-soft-pink/50">
+                         <span className="text-sm font-bold text-chocolate-brown">Qty: {item.quantity}</span>
+                       </div>
                        <button 
                         onClick={() => removeFromCart(index)}
-                        className="p-2 hover:bg-red-50 text-red-400 hover:text-red-500 rounded-full transition-colors"
+                        className="p-3 bg-red-50 hover:bg-red-100 text-red-500 rounded-full transition-colors shadow-sm"
                        >
                          <Trash2 className="w-5 h-5" />
                        </button>
@@ -57,20 +59,20 @@ const Cart = () => {
             </div>
 
             {/* Summary */}
-            <div className="bg-white/80 backdrop-blur-md p-6 rounded-cake shadow-xl border border-white h-fit sticky top-24">
-              <h2 className="text-xl font-bold text-chocolate-brown mb-6">Order Summary</h2>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between text-sm">
+            <div className="bg-white p-8 rounded-cake shadow-xl border border-soft-pink/30 h-fit sticky top-24">
+              <h2 className="text-2xl font-playfair font-bold text-chocolate-brown mb-6 pb-4 border-b border-soft-pink/30">Order Summary</h2>
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between text-base">
                    <span className="text-soft-gray">Subtotal</span>
-                   <span className="font-medium">${subtotal.toFixed(2)}</span>
+                   <span className="font-medium text-dark-brown">${subtotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-base">
                    <span className="text-soft-gray">Sales Tax (8%)</span>
-                   <span className="font-medium">${tax.toFixed(2)}</span>
+                   <span className="font-medium text-dark-brown">${tax.toFixed(2)}</span>
                 </div>
-                <div className="border-t border-soft-pink/30 pt-3 flex justify-between">
-                   <span className="font-bold text-chocolate-brown">Total</span>
-                   <span className="font-bold text-2xl text-strawberry-pink">${total.toFixed(2)}</span>
+                <div className="border-t border-soft-pink/50 pt-4 mt-2 flex justify-between items-center">
+                   <span className="text-lg font-bold text-chocolate-brown">Total</span>
+                   <span className="font-bold text-3xl text-strawberry-pink">${total.toFixed(2)}</span>
                 </div>
               </div>
               <Link to="/checkout" className="w-full btn-primary flex items-center justify-center gap-2">
